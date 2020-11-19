@@ -13,3 +13,12 @@ npm install --save-dev nodemon
 ## 02 Graphql
 
 npm install --save express-graphql graphql
+
+query {
+  events
+}
+
+mutation {
+  createEvent(name: "Sports")
+}
+

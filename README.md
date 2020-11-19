@@ -22,3 +22,4 @@ mutation {
   createEvent(name: "Sports")
 }
 
+## 03 Type Data

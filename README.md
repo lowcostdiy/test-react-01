@@ -24,6 +24,19 @@ mutation {
 
 const { graphqlHTTP } = require('express-graphql');
 
+mongoose
+  .connect(
+    `mongodb+srv://${process.env.MONGO_USER}:${
+      process.env.MONGO_PASSWORD
+    }@cluster0.23cx7.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
+  )
+  .then(() => {
+    app.listen(3000);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+
 ## 03 Type Data
 
 query {
@@ -56,3 +69,19 @@ mutation {
 }
 
 ## 05 Relations
+
+npm install --save bcryptjs
+
+mutation {
+  createUser(userInput:{email:"test@test.com", password:"tester"}) {
+    email
+    password
+  }
+}
+
+mutation {
+  createEvent(eventInput: {title: "A Test", description: "Does this work?", price: 9.99, date: "2020-11-20T02:49:52.926Z"}){
+    title
+    description
+  }
+}

@@ -23,3 +23,17 @@ mutation {
 }
 
 ## 03 Type Data
+
+query {
+  events {
+    title
+    price
+  }
+}
+
+mutation {
+  createEvent(eventInput: {title: "A Test", description: "Does this work?", price: 9.99, date: "2020-11-20T02:49:52.926Z"}){
+    title
+    description
+  }
+}

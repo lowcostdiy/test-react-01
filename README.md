@@ -22,6 +22,8 @@ mutation {
   createEvent(name: "Sports")
 }
 
+const { graphqlHTTP } = require('express-graphql');
+
 ## 03 Type Data
 
 query {
@@ -39,3 +41,16 @@ mutation {
 }
 
 ## 04 MongoDB
+
+npm install --save mongoose
+
+
+mongodb+srv://user:<password>@cluster0.23cx7.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+mutation {
+  createEvent(eventInput: {title: "Second Test", description: "It is working", price: 999.99, date: "2020-11-20T02:49:52.926Z"}){
+    _id
+    title
+    description
+  }
+}
